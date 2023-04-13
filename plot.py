@@ -34,7 +34,7 @@ class VideoWindow:
             for y in range(int(downscaled[1])):
                 field_coords = np.array([x, y]) * downscale
                 frame_coords = field_coords * field_to_frame
-                vec = -field[:, field_coords.astype(int)[1], field_coords.astype(int)[0]][::-1]
+                vec = field[:, field_coords.astype(int)[1], field_coords.astype(int)[0]][::-1]
                 cv2.arrowedLine(self._frame,
                                 frame_coords.astype(int), 
                                 (frame_coords + vec).astype(int),
