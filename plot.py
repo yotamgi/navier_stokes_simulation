@@ -28,6 +28,7 @@ class VideoWindow:
                               np.ones(coeff))
             
     def plot_vector(self, field, downscale):
+        field = np.array(field)
         downscaled = np.array(field.shape[1:]) / downscale
         field_to_frame = np.array(self._frame_size) / np.array(field.shape[1:])
         for x in range(int(downscaled[0])):
